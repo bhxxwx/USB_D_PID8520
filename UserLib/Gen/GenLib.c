@@ -270,22 +270,22 @@ char *usart2_readToEnd()
 //	}
 //}
 
-void USART2_IRQHandler(void)
-{
-	if (USART_GetITStatus(USART2, USART_IT_RXNE) != RESET) //接收到数据
-	{
-		USART_ClearITPendingBit(USART2, USART_IT_RXNE); //清除接收中断标志
-		if (Uart2_RX_Buffer.number < usart_buffer_size)
-		{
-			Uart2_RX_Buffer.RX_buffer[Uart2_RX_Buffer.number] = USART_ReceiveData(USART2); //接收串口1数据到buff缓冲区
-//			uart2_in_cache++;
-			Uart2_RX_Buffer.number++;
-		} else
-		{
-			Uart2_RX_Buffer.is_full = true;
-		}
-	}
-}
+//void USART2_IRQHandler(void)
+//{
+//	if (USART_GetITStatus(USART2, USART_IT_RXNE) != RESET) //接收到数据
+//	{
+//		USART_ClearITPendingBit(USART2, USART_IT_RXNE); //清除接收中断标志
+//		if (Uart2_RX_Buffer.number < usart_buffer_size)
+//		{
+//			Uart2_RX_Buffer.RX_buffer[Uart2_RX_Buffer.number] = USART_ReceiveData(USART2); //接收串口1数据到buff缓冲区
+////			uart2_in_cache++;
+//			Uart2_RX_Buffer.number++;
+//		} else
+//		{
+//			Uart2_RX_Buffer.is_full = true;
+//		}
+//	}
+//}
 
 //void USART3_IRQHandler(void)
 //{

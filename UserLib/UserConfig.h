@@ -29,6 +29,8 @@
 #include "keys/keys.h"
 
 //#include "Servers.h"
+#include "Functions/Servers.h"
+#include "DATAstruct/DATAstruct.h"
 
 #include "SPI_FLASH/SPI_FLASH.h"
 
