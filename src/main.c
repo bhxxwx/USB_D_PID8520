@@ -30,8 +30,10 @@ int main(void)
 	usart_2_init(9600, 2);
 	usart_3_init(9600, 3);
 	IWDG_INIT(IWDG_Prescaler_64, 1563); //2.5S watch dog
-//	delay_us(500000);
-//	int count = 0, len = 0;
+	pinModeA(GPIO_Pin_1,OUTPUT);//485Device 1 control pin
+	pinModeC(GPIO_Pin_4,OUTPUT);//485Device 2 control pin
+	pinModeA(GPIO_Pin_8,OUTPUT);//485Device 3 control pin
+
 	while (1)
 	{
 		uint8_t buf[200] = { 0 };
